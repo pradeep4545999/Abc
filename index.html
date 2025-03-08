@@ -3,33 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duddle Couples</title>
-    <style>   
+    <title>Delish Bites - Online Food Store</title>
+    <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #222;
-            color: white;
+            background-color: #f8f8f8;
         }
         .navbar {
-            background-color: white;
+            background-color: #ff6347;
             padding: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            color: white;
         }
         .navbar .logo {
             font-size: 24px;
             font-weight: bold;
-            color: #76b900;
-            display: flex;
-            align-items: center;
-        }
-        .navbar .logo::after {
-            content: " ❤️";
-            font-size: 20px;
-            margin-left: 5px;
         }
         .menu {
             list-style: none;
@@ -38,80 +29,66 @@
         }
         .menu li {
             margin: 0 15px;
-            position: relative;
         }
         .menu a {
             text-decoration: none;
-            color: black;
+            color: white;
             font-weight: bold;
-            transition: color 0.3s ease-in-out;
-            cursor: pointer;
+            transition: 0.3s;
         }
         .menu a:hover {
-            color: #7d1fd4;
+            color: #ffdd57;
         }
         .hero {
-            position: relative;
-            text-align: center;
-            background: url('Mountain.jpg') no-repeat center center/cover;
+            background: url('food-banner.jpg') no-repeat center center/cover;
             height: 500px;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-direction: column;
+            text-align: center;
+            color: white;
         }
         .hero h1 {
             font-size: 48px;
-            font-weight: bold;
             text-shadow: 2px 2px 5px black;
         }
-        .hero button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #76b900;
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 50px 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        .product button {
+            background: #ff6347;
             border: none;
             color: white;
-            cursor: pointer;
+            padding: 10px;
             border-radius: 5px;
-            transition: 0.3s;
-        }
-        .hero button:hover {
-            background-color: #5a8a00;
-        }
-        .gallery-container img {
             cursor: pointer;
         }
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
-        .testimonials {
-            text-align: center;
-            padding: 50px;
-            background: #444;
-        }
-        .testimonial-item {
-            margin: 20px;
-            padding: 20px;
-            background: #555;
-            border-radius: 10px;
+        .product button:hover {
+            background: #ff4500;
         }
         .footer {
-            background: black;
+            background: #222;
             color: white;
             text-align: center;
             padding: 20px;
@@ -120,53 +97,39 @@
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">Duddle Couples</div>
+        <div class="logo">Delish Bites</div>
         <ul class="menu">
-            <li><a href="#" class="highlight">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#gallery" id="galleryLink">Gallery</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Order Now</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
     <div class="hero">
-        <h1>Welcome to Duddle Couples</h1>
-        <button>Explore Now</button>
+        <h1>Delicious Food, Delivered Fast!</h1>
     </div>
-    <div id="gallery" class="gallery">
-        <h2>Our Beautiful Moments</h2>
-        <div class="gallery-container">
-            <img src="photo1.jpg" alt="Couple Image 1">
-            <img src="photo2.jpg" alt="Couple Image 2">
-            <img src="photo3.jpg" alt="Couple Image 3">
-            <img src="photo4.jpg" alt="Couple Image 4">
+    <div class="products">
+        <div class="product">
+            <img src="burger.jpg" alt="Burger">
+            <h3>Cheese Burger</h3>
+            <p>$5.99</p>
+            <button>Add to Cart</button>
         </div>
-    </div>
-    <div class="lightbox" id="lightbox">
-        <img id="lightbox-img" src="" alt="">
-    </div>
-    <div class="testimonials">
-        <h2>What Our Couples Say</h2>
-        <div class="testimonial-item">
-            <p>"Duddle Couples made our moments extra special!" - John & Emma</p>
+        <div class="product">
+            <img src="pizza.jpg" alt="Pizza">
+            <h3>Margherita Pizza</h3>
+            <p>$8.99</p>
+            <button>Add to Cart</button>
         </div>
-        <div class="testimonial-item">
-            <p>"Amazing experience, highly recommend!" - Alex & Sophia</p>
+        <div class="product">
+            <img src="pasta.jpg" alt="Pasta">
+            <h3>Spaghetti Pasta</h3>
+            <p>$7.49</p>
+            <button>Add to Cart</button>
         </div>
     </div>
     <div class="footer">
-        <p>Follow us on Social Media</p>
+        <p>&copy; 2025 Delish Bites. All Rights Reserved.</p>
     </div>
-    <script>
-        document.querySelectorAll(".gallery-container img").forEach(img => {
-            img.addEventListener("click", function () {
-                document.getElementById("lightbox").style.display = "flex";
-                document.getElementById("lightbox-img").src = this.src;
-            });
-        });
-        document.getElementById("lightbox").addEventListener("click", function () {
-            this.style.display = "none";
-        });
-    </script>
 </body>
 </html>
